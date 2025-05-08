@@ -15,9 +15,9 @@ const Index = () => {
   }, [navigate]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-lottery-background">
+    <div className="min-h-screen flex items-center justify-center bg-black text-white">
       <div className="text-center">
-        <h2 className="text-xl font-medium text-lottery-primary">Redirecionando...</h2>
+        <h2 className="text-xl font-medium">Redirecionando...</h2>
       </div>
     </div>
   );

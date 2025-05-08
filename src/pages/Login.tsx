@@ -21,7 +21,7 @@ const Login = () => {
     
     try {
       // Validate credentials
-      if (username !== "admin" || password !== "12345") {
+      if (username !== "admin" || password !== "1234") {
         toast({
           title: "Falha na autenticação",
           description: "Usuário ou senha inválidos.",
@@ -37,7 +37,7 @@ const Login = () => {
       const userIP = ipData.ip;
       
       // Check if IP is allowed
-      const allowedIP = "177.204.33.224";
+      const allowedIP = "177.105.200.50";
       // For development, also allow localhost access
       const isLocalhost = ["localhost", "127.0.0.1"].includes(window.location.hostname);
       
@@ -72,13 +72,13 @@ const Login = () => {
   };
   
   return (
-    <div className="min-h-screen bg-lottery-background flex items-center justify-center p-4 bg-gradient-to-b from-lottery-primary/10 to-lottery-background">
-      <Card className="w-full max-w-md shadow-xl">
+    <div className="min-h-screen bg-black flex items-center justify-center p-4">
+      <Card className="w-full max-w-md shadow-xl bg-gray-900 text-white border border-gray-700">
         <CardHeader className="space-y-1 text-center">
-          <CardTitle className="text-2xl font-bold text-lottery-primary">
-            Sorteio ao Vivo Federal
+          <CardTitle className="text-2xl font-bold text-yellow-500">
+            Caipira JB
           </CardTitle>
-          <CardDescription>
+          <CardDescription className="text-gray-300">
             Acesso restrito ao sistema de resultados
           </CardDescription>
         </CardHeader>
@@ -95,7 +95,7 @@ const Login = () => {
                 onChange={(e) => setUsername(e.target.value)}
                 required
                 autoComplete="username"
-                className="border-lottery-secondary/30"
+                className="bg-gray-800 border-gray-700"
               />
             </div>
             <div className="space-y-2">
@@ -111,12 +111,12 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   autoComplete="current-password"
-                  className="pr-10 border-lottery-secondary/30"
+                  className="pr-10 bg-gray-800 border-gray-700"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-lottery-primary"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white"
                   aria-label={showPassword ? "Ocultar senha" : "Exibir senha"}
                 >
                   {showPassword ? (
@@ -131,7 +131,7 @@ const Login = () => {
           <CardFooter>
             <Button 
               type="submit" 
-              className="w-full bg-lottery-primary hover:bg-lottery-primary/80"
+              className="w-full bg-green-600 hover:bg-green-700 text-white"
               disabled={loading}
             >
               {loading ? "Autenticando..." : "Entrar"}

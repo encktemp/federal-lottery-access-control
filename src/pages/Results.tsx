@@ -1,7 +1,6 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -198,7 +197,7 @@ const Results = () => {
                 placeholder="Cole o link ou embed do YouTube"
                 value={youtubeLink}
                 onChange={(e) => setYoutubeLink(e.target.value)}
-                className="bg-white text-black"
+                className="bg-gray-800 text-white border-gray-700"
               />
               <Button onClick={handleYoutubeEmbed} className="bg-green-600 hover:bg-green-700">
                 Exibir
@@ -207,7 +206,7 @@ const Results = () => {
             
             <div 
               ref={videoContainerRef} 
-              className="bg-gray-200 aspect-video flex items-center justify-center text-gray-500"
+              className="bg-gray-800 aspect-video flex items-center justify-center text-gray-400 border border-gray-700"
             >
               Área do Vídeo
             </div>
@@ -215,28 +214,28 @@ const Results = () => {
           
           {/* Right Column - Results Table */}
           <div className="space-y-4">
-            <div className="bg-blue-500 p-2 text-center text-white text-xl font-bold">
+            <div className="bg-blue-800 p-2 text-center text-white text-xl font-bold">
               RESULTADOS
             </div>
             
-            <div className="bg-white rounded overflow-hidden">
+            <div className="bg-gray-900 rounded overflow-hidden border border-gray-700">
               <Table>
-                <TableHeader className="bg-gray-200">
+                <TableHeader className="bg-gray-800">
                   <TableRow>
-                    <TableHead className="text-center text-black">#</TableHead>
-                    <TableHead className="text-center text-black">Milhar</TableHead>
-                    <TableHead className="text-center text-black">Grupo</TableHead>
-                    <TableHead className="text-center text-black">Animal</TableHead>
-                    <TableHead className="text-center text-black">Foto</TableHead>
+                    <TableHead className="text-center text-white">#</TableHead>
+                    <TableHead className="text-center text-white">Milhar</TableHead>
+                    <TableHead className="text-center text-white">Grupo</TableHead>
+                    <TableHead className="text-center text-white">Animal</TableHead>
+                    <TableHead className="text-center text-white">Foto</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {results.map((result) => (
-                    <TableRow key={result.id}>
-                      <TableCell className="text-center text-black">{result.id}</TableCell>
-                      <TableCell className="text-center text-black">{result.number}</TableCell>
-                      <TableCell className="text-center text-black">{result.group}</TableCell>
-                      <TableCell className="text-center text-black">{result.animal}</TableCell>
+                    <TableRow key={result.id} className="border-gray-700">
+                      <TableCell className="text-center text-white">{result.id}</TableCell>
+                      <TableCell className="text-center text-white">{result.number}</TableCell>
+                      <TableCell className="text-center text-white">{result.group}</TableCell>
+                      <TableCell className="text-center text-white">{result.animal}</TableCell>
                       <TableCell className="text-center">
                         <img 
                           src={result.image} 
@@ -246,11 +245,11 @@ const Results = () => {
                       </TableCell>
                     </TableRow>
                   ))}
-                  <TableRow className="bg-gray-100">
-                    <TableCell colSpan={2} className="text-left font-bold text-black">
+                  <TableRow className="bg-gray-800 border-gray-700">
+                    <TableCell colSpan={2} className="text-left font-bold text-white">
                       SOMATÓRIO GERAL:
                     </TableCell>
-                    <TableCell colSpan={3} className="text-right font-bold text-black">
+                    <TableCell colSpan={3} className="text-right font-bold text-white">
                       {total}
                     </TableCell>
                   </TableRow>
@@ -265,7 +264,7 @@ const Results = () => {
                 value={numberInput}
                 onChange={(e) => setNumberInput(e.target.value)}
                 maxLength={4}
-                className="bg-white text-black"
+                className="bg-gray-800 text-white border-gray-700"
               />
               <Button onClick={handleNumberSubmit} className="bg-green-600 hover:bg-green-700">
                 Adicionar
@@ -293,4 +292,3 @@ const Results = () => {
 };
 
 export default Results;
-
